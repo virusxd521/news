@@ -90,14 +90,11 @@ if (lang !== localeForGhost && localeForGhost !== 'local') {
 
 // Config Computations
 const computedDomain = siteDomain || 'freecodecamp.org';
-const computedPath =
-  lang === 'english' || lang === 'chinese' ? 'news' : `${lang}/news`;
+const computedPath = lang === 'english' ? 'news' : `${lang}/news`;
 let siteURL;
 
 if (computedDomain.startsWith('localhost')) {
   siteURL = `http://${computedDomain}/${computedPath}`;
-} else if (lang === 'chinese') {
-  siteURL = `https://chinese.${computedDomain}/${computedPath}`;
 } else {
   siteURL = `https://www.${computedDomain}/${computedPath}`;
 }
